@@ -52,7 +52,7 @@
         <div class="col-half left upper">
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <span class="icon icon-InternetTSIcon48px"></span>
+              <span class="img icon icon-InternetTSIcon48px"></span>
             </div>
             <div class="col-threequarter">
               <div class="col-half">
@@ -75,7 +75,7 @@
           <!-- Desktop phone -->
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center image">
-              <span class="icon icon-PhoneTSIcon48px"></span>
+              <span class="img icon icon-PhoneTSIcon48px"></span>
               <!-- <img src="assets/images/PhoneTSIcon48px.svg" onerror="this.onerror=null; this.src='assets/images/PhoneTSIcon48px.png'" alt="Phone"> -->
             </div>
             <div class="col-threequarter">
@@ -83,10 +83,9 @@
                 <strong>Mitu lauatelefoni?</strong>
               </div>
               <div class="col-half right text-right">
-                <button type="button" class="btn btn-link js-onedown"><span class="icon icon-MinusTSIcon48px"></span></button>
-                <input type="text" id="js-counted-phone" class="hide" value="0">
-                <span class="amount">0</span>
-                <button type="button" class="btn btn-link js-oneup"><span class="icon icon-AddTSIcon48px"></span></button>
+                <button type="button" class="btn btn-link" onclick="removePhone();"><span class="icon icon-MinusTSIcon48px"></span></button>
+                <span class="amount" id="js-phoneamount">0</span>
+                <button type="button" class="btn btn-link" onclick="addPhone();"><span class="icon icon-AddTSIcon48px"></span></button>
               </div>
 
             </div>
@@ -110,17 +109,17 @@
         <div class="col-half right divided upper">
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <span class="icon icon-MobileTSIcon48px"></span>
+              <span class="img icon icon-MobileTSIcon48px"></span>
             </div>
             <div class="col-threequarter">
               <div class="col-half left">
                 <strong>Mitu mobiiltelefoni?</strong>
               </div>
               <div class="col-half right text-right">
-                <button type="button" class="btn btn-link js-onedown"><span class="icon icon-MinusTSIcon48px"></span></button>
-                <input type="text" id="js-counted-mobile" class="hide" value="0">
-                <span class="amount">0</span>
-                <button type="button" class="btn btn-link js-oneup"><span class="icon icon-AddTSIcon48px"></span></button>
+                <button type="button" class="btn btn-link" onclick="removeMobile();"><span class="icon icon-MinusTSIcon48px"></span></button>
+                
+                <span class="amount" id="js-mobileamount">0</span>
+                <button type="button" class="btn btn-link" onclick="addMobile();"><span class="icon icon-AddTSIcon48px"></span></button>
               </div>
             </div>
             <div class="col-threequarter">
@@ -154,23 +153,17 @@
           <!--           Dongle -->
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <span class="icon icon-DongleTSIcon48px"></span>
+              <span class="img icon icon-DongleTSIcon48px"></span>
             </div>
             <div class="col-threequarter">
               <div class="col-half left">
                 <strong style="line-height: 2.2;">Mitu netipulka?</strong>
               </div>
+
               <div class="col-half right text-right">
-                <button type="button" class="btn btn-link js-onedown"><span class="icon icon-MinusTSIcon48px"></span></button>
-                <input type="text" id="js-counted-dongle" class="hide">
-                <span class="amount">0</span>
-                <button type="button" class="btn btn-link js-oneup"><span class="icon icon-AddTSIcon48px"></span></button>
-              </div>
-              <div class="col-half right text-right">
-                <button type="button" class="btn btn-link js-onedown" ><span class="icon icon-MinusTSIcon48px"></span></button>
-                <input type="text" id="js-counted-dongle" >
+                <button type="button" class="btn btn-link" onclick="removeDongle();"><span class="icon icon-MinusTSIcon48px"></span></button>
                 <span class="amount" id="js-dongleamount">0</span>
-                <button type="button" class="btn btn-link" onclick="addOneDongle();"><span class="icon icon-AddTSIcon48px"></span></button>
+                <button type="button" class="btn btn-link" onclick="addDongle();"><span class="icon icon-AddTSIcon48px"></span></button>
               </div>
             </div>
             <div class="col-threequarter">
@@ -193,14 +186,14 @@
             <br>
             <span class="small">Hinnale lisandub käibemaks</span>
           </h2>
-          <button type="button" class="btn btn-primary" id="js-confirm-calc" data-toggle="button">Soovin täpset pakkumist</button>
+          <button type="button" class="btn btn-primary" id="js-confirm-calc">Soovin täpset pakkumist</button>
         </div>
       </div>
 
     </div>
 
       <div >
-        <form action="" method="" name="" enctype="" >
+        <form action="" method="" name="" class="hide" >
           <strong>Internet</strong>
           <br>
           Kiirus: <input type="text" id="js-volume-desktopStripped" value=""/>
@@ -209,14 +202,14 @@
           <strong>Lauatelefoni liitumisi</strong>
           <br>
           Maht: <input type="text" id="js-volume-phoneStripped" value="60">
-          Kogus: <input type="text" id="js-counted-phoneVol" value="">
+          Kogus: <input type="text" id="js-counted-phone" value="0">
           Liitumiste hind: <input type="text" id="js-counted-phonePrice" value="">
           Hind: <input type="text" id="js-price-phone" />
           Kuutasu: <input type="text" id="js-counted-phoneSum" value="" />
           <br><br>
           <strong>Mobiil ja mobiilinternet</strong>
           <br>
-          Kogus: <input type="text" id="js-counted-mobileCount" value="0" />
+          Kogus: <input type="text" id="js-counted-mobile" value="0">
           <br>
           Pakett mobiilinternet:
           Hind: <input id="js-price-mobile"/>
@@ -231,7 +224,7 @@
           <strong>Netipulk</strong>
           <br> 
           Pakett: <input type="text" id="js-volume-dongleStripped" value="0" />
-          Kogus: <input type="text" id="js-counted-dongleCount" value="0" />
+          Kogus: <input type="text" id="js-counted-dongle" value="0" >
           Hind: <input id="js-price-dongle"/>
           Kuutasu: <input type="text" id="js-donglesum" value="0" />
         </form>
@@ -263,7 +256,7 @@
           <label for="name">Kontor </label><input type="text" name="name" id="">
           <div class="alert alert-danger hide"><span class="icon icon-AlertTSIcon48px"></span>  Unustasid midagi täitmata. Palun vaata andmed üle.</div>
           <div class="buttongroup">
-            <a href="" id="js-back">Tagasi</a>
+            <a href="#" id="js-back">Tagasi</a>
             <input type="submit" class="btn btn-primary" name="Submit" value="Saada andmed" />
           </div>
         </form>

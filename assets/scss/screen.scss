@@ -106,25 +106,28 @@ border-color: darken($primary-color, 5%);
 	padding: 0!important;
 	transition: background-color 0.3s ease;
 	margin-top: -5px;
+	background-color: rgba(0, 0, 0, 0);
+	-webkit-box-shadow: none;
+	box-shadow: none;
 
-	&:hover, &:focus, &:active, &:visited {
+	&:hover, &:active{
 		text-decoration: none;
 		border-radius: 30px;
 		width: 30px;
 		height: 30px;
 		background-color: $primary-color;
+		color: white;
 	}
-}
 
-.btn-link, .btn-link:active {
-background-color: rgba(0, 0, 0, 0);
--webkit-box-shadow: none;
-box-shadow: none;
+	//  &:focus, &:visited  {
+	// 	background-color: white;
+	// 	color: $primary-color;
+	// }
 }
 
 .btn-link .icon {
 	font-size: 25px;
-	transition: color 0.3s ease;
+	// transition: color 0.3s ease;
 	vertical-align: middle;
 	&:hover, &:focus, &:active, &:visited {
 		color: white;
@@ -281,13 +284,7 @@ span.amount {
 	font-size: 22px;
 }
 
-.image img {
-	width: 75%;
-	height: 75%;
-	margin-top: 20px;
-}
-
-.icon {
+.img {
 	color: $primary-color;
 }
 

@@ -80,14 +80,14 @@ var mobileVolumeVolSms = {
     0: "40",
     1: "90",
     2: "200"
-}
+};
 
 var mobileVolumeVolMin = {
 
     0: "400",
     1: "900",
     2: "2000"
-}
+};
 
 var mobilePriceVol = {
 
@@ -175,7 +175,7 @@ var calculatePrice = function () {
     
 
     var counted =  desktop + phonesum + mobilesum + donglesum;
-
+console.log(donglecount);
 
     var countedround = counted.toFixed(2);
     var comnum = ReplaceNumberWithCommas(countedround);
@@ -198,25 +198,66 @@ var calculatePrice = function () {
     $("#js-volume-desktopStripped").val($("#js-volume-desktop").text());
 
     $("#js-volume-phoneStripped").val($("#js-volume-phone").text());
-    $("#js-counted-phoneVol").val(phonecount);
     $("#js-counted-phonePrice").val((phonecountsum).toFixed(2));
     $("#js-counted-phoneSum").val((phonesum).toFixed(2));
 
-    $("#js-counted-mobileCount").val(mobilecount);
     $('#js-mobilesum').val((mobilesum).toFixed(2));
 
     $("#js-volume-dongleStripped").val($("#js-volume-dongle").text());
-    $("#js-counted-dongleCount").val(donglecount);
     $('#js-donglesum').val((donglesum).toFixed(2));
 
 };
 
-var count = 0;
 
-    var addOneDongle = function () {
-            count++;
-        $("#js-dongleamount").html(count);
-        $("#js-dongleamountval").val(count);
+
+var countD = 0;
+
+    var addDongle = function () {
+            countD++;
+        $("#js-dongleamount").html(countD);
+        $("#js-counted-dongle").val(countD);
+        calculatePrice();
+    };
+
+    var removeDongle = function () {
+        if (countD > 0)
+            countD--;
+        $("#js-dongleamount").html(countD);
+        $("#js-counted-dongle").val(countD);
+        calculatePrice();
+    };
+
+var countM = 0;
+
+    var addMobile = function () {
+            countM++;
+        $("#js-mobileamount").html(countM);
+        $("#js-counted-mobile").val(countM);
+        calculatePrice();
+    };
+
+    var removeMobile = function () {
+        if (countM > 0)
+            countM--;
+        $("#js-mobileamount").html(countM);
+        $("#js-counted-mobile").val(countM);
+        calculatePrice();
+    };
+
+var countP = 0;
+
+    var addPhone = function () {
+            countP++;
+        $("#js-phoneamount").html(countP);
+        $("#js-counted-phone").val(countP);
+        calculatePrice();
+    };
+
+    var removePhone = function () {
+        if (countP > 0)
+            countP--;
+        $("#js-phoneamount").html(countP);
+        $("#js-counted-phone").val(countP);
         calculatePrice();
     };
 
@@ -235,9 +276,9 @@ $(document).ready( function() {
     
     $("#js-slider-mobile").slider()
     .on('slide', function(ev){
-        if ($("#js-slider-mobile").val() > 0) {
-            addoneDongle();
-        }
+        // if ($("#js-slider-mobile").val() > 0) {
+
+        // }
         calculatePrice();
 
          // $("#js-volume-mobile-vol").html(mobileAddedMin[$("#js-slider-mobile").val()]);
@@ -246,33 +287,34 @@ $(document).ready( function() {
 
     $("#js-slider-mobile-vol").slider()
     .on('slide', function(ev){
+
         calculatePrice();
     });
 
     $("#js-slider-dongle").slider()
     .on('slide', function(ev){
-        calculatePrice();
-    });
-
-
-
-    $(".js-onedown").click(function() {
-        if (count > 0)
-            count--;
-        $(this).next().val(count);
-        $(this).next().next().html(count);
 
         calculatePrice();
     });
 
-    $(".js-oneup").click(function() {
-        count++;
-        $(this).prev().prev().val(count);
-        $(this).prev().html(count);
 
-        calculatePrice();
-    });
 
+    // $(".js-onedown").click(function() {
+    //     if (count > 0)
+    //         count--;
+    //     $(this).next().val(count);
+    //     $(this).next().next().html(count);
+
+    //     calculatePrice();
+    // });
+
+    // $(".js-oneup").click(function() {
+    //     count++;
+    //     $(this).prev().prev().val(count);
+    //     $(this).prev().html(count);
+
+    //     calculatePrice();
+    // });
 
         $("#js-price-desktop").val("0");
 
@@ -304,17 +346,17 @@ $("#js-confirm-calc").click(function(){
 $("#js-back").click(function(){
     $("#contactwrapper").hide();
     $("#calcwrapper").show();
-})
+});
 
 function required() {
     var empt = $(".form-group :input").val();
-    if (empt =="") {
+    if (empt ==="") {
         $(".form-group").addClass("has-error");
         $(".alert-danger").slideDown("fast");
         return false;
     }
     else {
-        // $(".alert-danger").slideUp("fast");
+        $(".alert-danger").slideUp("fast");
         $(".form-group").removeClass("has-error");
         $("#contactwrapper").slideUp('slow');
         $("#calcwrapper").hide();
