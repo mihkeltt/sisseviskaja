@@ -216,6 +216,7 @@ var count = 0;
     var addOneDongle = function () {
             count++;
         $("#js-dongleamount").html(count);
+        $("#js-dongleamountval").val(count);
         calculatePrice();
     };
 
@@ -234,10 +235,11 @@ $(document).ready( function() {
     
     $("#js-slider-mobile").slider()
     .on('slide', function(ev){
+        if ($("#js-slider-mobile").val() > 0) {
+            addoneDongle();
+        }
         calculatePrice();
-        //     if ($("#js-slider-mobile").val() > 0) {
-        //     $("#js-volume-mobile-vol").html(mobileAddedMin[$("#js-slider-mobile").val()]);
-        // }
+
          // $("#js-volume-mobile-vol").html(mobileAddedMin[$("#js-slider-mobile").val()]);
          
     });
