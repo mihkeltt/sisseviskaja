@@ -1,0 +1,28 @@
+$primary-color: #652D86;
+$bordergray: #ccc;
+$border: 1px solid $bordergray;
+$blue: #0F8AC2;
+$hcolor:  #111;
+$graytext: #545556;
+$bgcolor: #F6F6F6;
+$alertcolor: #C41B79;
+$successcolor: #00B48C;
+
+@function emCalc($pxWidth) {
+  @return $pxWidth / $em-base * 1em;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.article {
+     @include clearfix();
+}

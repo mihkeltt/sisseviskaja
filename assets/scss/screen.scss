@@ -1,0 +1,458 @@
+/*
+
+	OFFROAD CODE
+	------------
+	Author 	: 	James Young | james@offroadcode.com
+	Website :	http://www.offroadcode.com
+	Twitter :	@offroadcode
+	
+	CONTENTS
+	--------
+	- Global reset
+	- Global rules
+	
+	- MEDIA QUERIES - Some breakpoints	
+	
+*/
+@import "_variables";
+@import "_style";
+@import "_slider";
+
+
+/* START : Global reset */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,dialog,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;border:0;vertical-align:baseline;background:transparent}ins,mark{background:#333;color:#fff;text-decoration:none}mark{padding:0 3px;}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted #000;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}::-moz-selection,::-webkit-selection,::selection {text-shadow:none;background:#333;color:#fff;}.cf:before,.cf:after{content:"";display:table;}.cf:after{clear:both;}.cf{zoom:1;}
+/* END : Global reset */
+
+/* START : Global rules */
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+	font-family: Arial, sans-serif;
+	}
+
+html {
+	background: $bgcolor;
+	font-size: 100%;
+	line-height: 1.5;
+	}
+ 
+
+body {
+	padding: 0;
+	margin: 0 auto;
+	width: 96%;
+	max-width: 78.75em /* This is 1260px */;
+	font-size: 14px;
+	line-height: 20px;
+	color: #111111;
+	}
+	
+h1, h2, h3, h4, h5, h6 {
+	line-height: normal;
+	}	
+
+/* END : Global rules */
+
+
+
+/* START : Bootstrap & ELion styles */
+
+.hide {
+	display: none;
+}
+
+.blue-text {
+	color: $blue;
+}
+
+.violet-text {
+	color: $primary-color;
+}
+
+.text-center {
+text-align: center;
+}
+
+.text-right {
+text-align: right;
+}
+
+a {
+	color: $primary-color;
+
+	&:hover {
+		color: darken($primary-color, 5%);
+	}
+}
+
+.btn-primary {
+color: #FFF;
+background-color: $primary-color;
+border-color: darken($primary-color, 5%);
+	&:hover {
+		background-color: darken($primary-color, 5%);
+		border-color: darken($primary-color, 5%);
+	}
+}
+
+.btn-link {
+	font-weight: normal;
+	color: $primary-color;
+	cursor: pointer;
+	border-radius: 30px;
+	width: 30px;
+	height: 30px;
+	padding: 0!important;
+	transition: background-color 0.3s ease;
+	margin-top: -5px;
+
+	&:hover, &:focus, &:active, &:visited {
+		text-decoration: none;
+		border-radius: 30px;
+		width: 30px;
+		height: 30px;
+		background-color: $primary-color;
+	}
+}
+
+.btn-link, .btn-link:active {
+background-color: rgba(0, 0, 0, 0);
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+.btn-link .icon {
+	font-size: 25px;
+	transition: color 0.3s ease;
+	vertical-align: middle;
+	&:hover, &:focus, &:active, &:visited {
+		color: white;
+	}
+}
+
+
+.clearfix:before,
+.clearfix:after{ 
+	display:table;
+	content:" ";
+}
+
+.clearfix:after { 
+	clear:both;
+}
+
+.btn {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 1.428571429;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid rgba(0, 0, 0, 0);
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
+/* END : Bootstrap styles */
+
+
+/* START : Global styles */
+
+
+#pricecalculator {
+	margin: 20px auto;
+	width: 700px;
+}
+
+#contentarea {
+	margin: 30px auto;
+	border: $border;
+	border-radius: 4px;
+}
+
+hr {
+	margin: 0.5em 0;
+}
+
+p, strong {
+	font-size: 15px;
+	line-height: 1.1;
+}
+// Layout
+.col-half {
+	width: 50%;
+	&.upper {
+		padding-top: 15px;
+	}
+	&.left {
+		float: left;
+	}
+	&.right {
+		float: right;
+		&.divided {
+			border-left: $border;
+		}
+	}
+}
+
+.section-horizontal {
+	padding: 10px 0;
+}
+
+.bottomborder {
+	border-bottom: $border;
+}
+
+.col-quarter {
+	width: 25%;
+	float: left;
+	padding-left: 10px;
+}
+
+.col-threequarter {
+	width: 75%;
+	float: right;
+	padding: 0 19px;
+}
+
+#conclusion {
+	width: 100%;
+	padding: 25px 19px;
+	background: white;
+	clear: both;
+	border-top: $border;
+}
+
+#total { 
+	display: inline-block;
+	line-height: 0.7;
+	margin-top: 10px;
+	.small {
+		font-size: 55%;
+	}
+}
+
+
+// Text styles
+h2 {
+	color: $hcolor;
+	line-height: 0.8em;
+	font-weight: 600;
+	letter-spacing: -0.025em;
+	font-size: emCalc(30px);
+		.small {
+		font-size: 70%;
+		color: $hcolor;
+		font-weight: normal;
+		padding: 0;
+	}
+}
+
+.col-quarter {
+	font-size: 15px;
+	line-height: 1.2em;
+	p {
+		color: $graytext;
+	}
+	span {
+		font-weight: 600;
+	}
+}
+
+.small {
+	padding: 0 19px;
+	line-height: 1.2;
+	color: $graytext;
+	font-size: 11px;
+}
+
+span.amount {
+	font-weight: 600;
+	font-size: 22px;
+}
+
+.image img {
+	width: 75%;
+	height: 75%;
+	margin-top: 20px;
+}
+
+.icon {
+	color: $primary-color;
+}
+
+.col-quarter .icon {
+	display: block;
+	font-size: 50px;
+	margin-top: 20px;
+}
+
+
+#js-volume-mobile, #js-volume-dongle {
+	margin-top: -20px;
+}
+
+#js-volume-mobile-vol, #js-volume-desktop {
+	margin-top: -10px;
+}
+
+.col-quarter {
+	padding-left: 10px;
+}
+
+// Stupid adjustments
+
+.col-quarter .icon-InternetTSIcon48px {
+	margin-top: 5px;
+
+}
+
+
+#js-confirm-calc {
+	margin-top: 6px;
+	margin-right: 7px;
+	display: inline-block;
+	float: right;
+	&.btn {
+		padding: 6px 20px;
+	}
+}
+
+// Forms 
+
+
+#contactform {
+	width: 400px;
+	margin: 0 auto;
+	h2 span.small {
+		display: inline-block;
+		margin-top: 30px;
+	}
+}
+
+label {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+input:focus {
+  border-color: rgba(103, 47, 135, 0.8);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(103, 47, 135, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(103, 47, 135, 0.6);
+}
+
+.alert-text {
+	color: $alertcolor;
+}
+
+.has-error .form-control {
+border-color: $alertcolor;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-error .control-label {
+	color: $alertcolor;
+}
+
+.has-error .form-control:focus {
+border-color: rgba(103, 47, 135, 0.8);
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 6px $primary-color;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 6px $primary-color;
+}
+
+.alert-danger {
+color: $alertcolor;
+background-color: white;
+border-color: $alertcolor;
+}
+
+.alert {
+padding: 15px;
+margin-bottom: 20px;
+border: 1px solid $alertcolor;
+border-radius: 4px;
+}
+
+.alert.alert-danger {
+	margin-top: 20px;
+}
+.alert .icon {
+	color: $alertcolor;
+	font-size: 22px;
+	vertical-align: middle;
+}
+
+input[type="submit"] {
+	width: auto;
+	float: right;
+}
+
+.buttongroup {
+	margin-top: 20px;
+	& a {
+		line-height: 2;
+	}
+}
+/* END : Global styles */
+
+
+
+/* START : MEDIA QUERIES */
+/* 
+	
+Breakpoint sizes in em's for flexibility.
+These are some "common" breakpoints - change these to whatever you like
+
+-> 30em = 480px
+-> 37.5em = 600px
+-> 48em = 768px
+-> 64em = 1024px
+-> 78.75em = 1260px
+
+*/
+@media only screen and (min-width: 30em) { }
+
+@media only screen and (min-width: 37.5em) { }
+
+@media only screen and (min-width: 48em) { }
+
+@media only screen and (min-width: 64em) { }
+
+@media only screen and (min-width: 78.75em) { }
+/* END : MEDIA QUERIES */
+
+
+/* PRINT STYLES */
+@media print {
+	/* If you're going to have a print stylesheet, now's the time */
+}

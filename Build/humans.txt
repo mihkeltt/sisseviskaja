@@ -1,0 +1,30 @@
+/* TEAM */
+
+We are Offroadcode.com - You can follow us @offroadcode.
+
+Design: James Young
+Twitter: @welcomebrand
+From: Huddersfield, West Yorkshire, United Kingdom
+	
+Development: Pete Duncanson
+Twitter: @peteduncanson
+From: Huddersfield, West Yorkshire, United Kingdom
+
+Development: John Llewellyn
+Twitter: @madebybear
+From: Huddersfield, West Yorkshire, United Kingdom
+
+Development: Stephen Roberts
+Twitter: @steroberts89
+From: Huddersfield, West Yorkshire, United Kingdom
+
+/* TOOLS */
+
+Last update: 	
+Standards: 	                       
+Components: 	
+Software: 	
+
+/* SUPPORT HUMANS.TXT */
+
+For more info on what this is visit humanstxt.org

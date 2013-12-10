@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie ie7"> <![endif]--> 
+<!--[if IE 8 ]>    <html lang="en" class="ie ie8"> <![endif]--> 
+<!--[if IE 9 ]>    <html lang="en" class="ie ie9"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8"> 
+  <title>Title</title>
+  <meta name="description" content=" " />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <meta http-equiv="ClearType" content="true" /> 
+
+  <!-- Little bits -->
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png" /> 
+  <link rel="author" type="text/plain" href="humans.txt">  
+  <!-- Little bits -->
+
+  <!-- Stylesheets -->
+<!-- 
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" media="screen" /> -->
+
+
+  <link rel="stylesheet" href="assets/scss/screen.css" media="screen" /> 
+  <!--     <link rel="stylesheet" href="assets/css/debug.css" media="screen" />  --><!-- debug.css IS JUST SOME DEV HELPERS - DELETE BEFORE DEPLOYING A SITE! --> 
+
+  <!-- Stylesheets -->
+
+  <!-- Scripts to load quick sharpish -->
+  <script src="assets/scripts/modernizr-2.6.2-custom.js"></script>     
+
+	<!--[if (gte IE 6)&(lte IE 8)]>
+    	<script src="assets/scripts/selectivizr.js"></script>
+     <![endif]-->
+     <!-- Scripts to load quick sharpish -->
+     <!-- @reload -->
+
+     <script type="text/javascript">
+
+     </script>
+   </head>
+
+   <body>
+  <section id="pricecalculator">
+    <div  class="calcwrapper" id="calcwrapper">
+      <h2 class="text-center">Pane kokku oma soovitud kontor - <br>
+        <span class="small">meie teeme sulle unelmate pakkumise nii kontorisse kui kontorist välja.</span>
+      </h2>
+      <div id="contentarea">
+        <!-- Desktop internet -->
+        <div class="col-half left upper">
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center">
+              <span class="icon icon-InternetTSIcon48px"></span>
+            </div>
+            <div class="col-threequarter">
+              <div class="col-half">
+                <strong>Internet</strong>
+              </div>
+              <hr>
+              <p>Vali sobiv <br>internetiühenduse kiirus</p>
+            </div>
+          </div>
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center">
+              <p id="js-volume-desktop"><span class="violet-text">Ei soovi</span></p> 
+            </div>
+            <div class="col-threequarter">
+              <input class="slider" id="js-slider-desktop" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+            </div>
+          </div>
+          <hr>
+          
+          <!-- Desktop phone -->
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center image">
+              <span class="icon icon-PhoneTSIcon48px"></span>
+              <!-- <img src="assets/images/PhoneTSIcon48px.svg" onerror="this.onerror=null; this.src='assets/images/PhoneTSIcon48px.png'" alt="Phone"> -->
+            </div>
+            <div class="col-threequarter">
+              <div class="col-half left">
+                <strong>Mitu lauatelefoni?</strong>
+              </div>
+              <div class="col-half right text-right">
+                <button type="button" class="btn btn-link js-onedown"><span class="icon icon-MinusTSIcon48px"></span></button>
+                <input type="text" id="js-counted-phone" class="hide" value="0">
+                <span class="amount">0</span>
+                <button type="button" class="btn btn-link js-oneup"><span class="icon icon-AddTSIcon48px"></span></button>
+              </div>
+
+            </div>
+            <div class="col-threequarter">
+              <hr>
+              <p>Kõnemaht ühe lauatelefoni <br> kohta kuus</p>
+            </div>
+          </div>
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center">
+              <p id="js-volume-phone"><span class="violet-text">60</span> minutit</p> 
+            </div>
+            <div class="col-threequarter">
+              <input class="slider" id="js-slider-phone" type="text" value="1" data-slider-min="0" data-slider-max="3" data-slider-step="1" data-slider-value="1" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+            </div>
+          </div>
+          <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, dolorem nesciunt iste mollitia ad sint cupiditate sit blanditiis rem non nisi neque dolorum quo molestias voluptates quas expedita nam. Illum?</p>
+        </div>
+
+        <!-- Mobile phone -->
+        <div class="col-half right divided upper">
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center">
+              <span class="icon icon-MobileTSIcon48px"></span>
+            </div>
+            <div class="col-threequarter">
+              <div class="col-half left">
+                <strong>Mitu mobiiltelefoni?</strong>
+              </div>
+              <div class="col-half right text-right">
+                <button type="button" class="btn btn-link js-onedown"><span class="icon icon-MinusTSIcon48px"></span></button>
+                <input type="text" id="js-counted-mobile" class="hide" value="0">
+                <span class="amount">0</span>
+                <button type="button" class="btn btn-link js-oneup"><span class="icon icon-AddTSIcon48px"></span></button>
+              </div>
+            </div>
+            <div class="col-threequarter">
+              <hr>
+              <p>Kõne-internetimaht ühe <br>mobiili kohta kuus</p>
+            </div>
+          </div>
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center">
+              <p id="js-volume-mobile"><span class="violet-text"></span>
+              </p> 
+            </div>
+            <div class="col-threequarter">
+              <input class="slider" id="js-slider-mobile" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+            </div>
+          </div>
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center">
+              <p id="js-volume-mobile-vol"><span class="violet-text"></span>
+              </p> 
+            </div>
+            <div class="col-threequarter">
+              <input class="slider" id="js-slider-mobile-vol" type="text" value="0" data-slider-min="0" data-slider-max="2" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+            </div>
+          </div>
+          <p class="small">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, dolorem nesciunt iste mollitia ad sint cupiditate sit blanditiis rem non nisi neque dolorum quo molestias voluptates quas expedita nam. Illum?
+          </p>
+          <hr>
+
+          <!--           Dongle -->
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center">
+              <span class="icon icon-DongleTSIcon48px"></span>
+            </div>
+            <div class="col-threequarter">
+              <div class="col-half left">
+                <strong style="line-height: 2.2;">Mitu netipulka?</strong>
+              </div>
+              <div class="col-half right text-right">
+                <button type="button" class="btn btn-link js-onedown"><span class="icon icon-MinusTSIcon48px"></span></button>
+                <input type="text" id="js-counted-dongle" class="hide">
+                <span class="amount">0</span>
+                <button type="button" class="btn btn-link js-oneup"><span class="icon icon-AddTSIcon48px"></span></button>
+              </div>
+              <div class="col-half right text-right">
+                <button type="button" class="btn btn-link js-onedown" ><span class="icon icon-MinusTSIcon48px"></span></button>
+                <input type="text" id="js-counted-dongle" >
+                <span class="amount" id="js-dongleamount">0</span>
+                <button type="button" class="btn btn-link" onclick="addOneDongle();"><span class="icon icon-AddTSIcon48px"></span></button>
+              </div>
+            </div>
+            <div class="col-threequarter">
+              <hr>
+              <p>Andmemaht ühe netipulga <br> kohta kuus</p>
+            </div>
+          </div>
+          <div class="section-horizontal clearfix">
+            <div class="col-quarter text-center">
+              <p id="js-volume-dongle"><span class="violet-text" ></span></p> 
+            </div>
+            <div class="col-threequarter">
+              <input class="slider" id="js-slider-dongle" type="text" value="0" data-slider-min="0" data-slider-max="4" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-tooltip="hide" data-slider-selection="after">
+            </div>
+          </div>
+        </div>
+
+        <div id="conclusion">
+          <h2 id="total">Hind sinule alates: <span class="blue-text"><span id="js-sum">0,00</span> € / kuus</span>
+            <br>
+            <span class="small">Hinnale lisandub käibemaks</span>
+          </h2>
+          <button type="button" class="btn btn-primary" id="js-confirm-calc" data-toggle="button">Soovin täpset pakkumist</button>
+        </div>
+      </div>
+
+    </div>
+
+      <div >
+        <form action="" method="" name="" enctype="" >
+          <strong>Internet</strong>
+          <br>
+          Kiirus: <input type="text" id="js-volume-desktopStripped" value=""/>
+          Kuutasu: <input type="text" id="js-price-desktop" />
+          <br><br>
+          <strong>Lauatelefoni liitumisi</strong>
+          <br>
+          Maht: <input type="text" id="js-volume-phoneStripped" value="60">
+          Kogus: <input type="text" id="js-counted-phoneVol" value="">
+          Liitumiste hind: <input type="text" id="js-counted-phonePrice" value="">
+          Hind: <input type="text" id="js-price-phone" />
+          Kuutasu: <input type="text" id="js-counted-phoneSum" value="" />
+          <br><br>
+          <strong>Mobiil ja mobiilinternet</strong>
+          <br>
+          Kogus: <input type="text" id="js-counted-mobileCount" value="0" />
+          <br>
+          Pakett mobiilinternet:
+          Hind: <input id="js-price-mobile"/>
+          Lisanduvad SMS-id: <input id="js-volume-mobile-sms"/> 
+          Lisanduvad minutid: <input id="js-volume-mobile-minutes"/>
+          <br>
+          Pakett kõneaeg ja sms:  Hind: <input id="js-price-mobile-vol"/>
+          SMS-ide arv: <input id="js-volume-mobile-sms-val" value="0"/> Minutit: <input id="js-volume-mobile-min-val"/>
+          <br>
+          Kuutasu: <input type="text" id="js-mobilesum" value="0" /> 
+          <br><br>
+          <strong>Netipulk</strong>
+          <br> 
+          Pakett: <input type="text" id="js-volume-dongleStripped" value="0" />
+          Kogus: <input type="text" id="js-counted-dongleCount" value="0" />
+          Hind: <input id="js-price-dongle"/>
+          Kuutasu: <input type="text" id="js-donglesum" value="0" />
+        </form>
+      </div>
+
+
+
+      <div id="contactwrapper" class="hide">
+        <h2 class="text-center">Kellele me täpsustatud pakkumise saadame? </h2>
+        <div id="contactform">
+          <h2><span class="small">Palun sisesta siia oma kontaktandmed.</span></h2>
+        <form action="#" onsubmit="required()" name="senddata">
+          
+          <div class="form-group">
+            <label class="control-label" for="Name">Nimi<span class="alert-text"> *</span></label>
+            <input type="text" class="form-control" id="Name" name="Name">
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="Phone">Kontakttelefon<span class="alert-text"> *</span></label>
+            <input type="text" class="form-control" id="Phone">
+          </div>
+          <label for="name">Ettevõtte nimi </label><input type="text" name="name" id="">
+          <label for="name">E-posti aadress </label><input type="email" name="name" id="">
+          
+          <h2><span class="small">Millisel aadressil plaanid teenuseid kasutada?</span></h2>
+          <label for="name">Linn </label><input type="text" name="name" id="">
+          <label for="name">Tänav </label><input type="text" name="name" id="">
+          <label for="name">Maja </label><input type="text" name="name" id="">
+          <label for="name">Kontor </label><input type="text" name="name" id="">
+          <div class="alert alert-danger hide"><span class="icon icon-AlertTSIcon48px"></span>  Unustasid midagi täitmata. Palun vaata andmed üle.</div>
+          <div class="buttongroup">
+            <a href="" id="js-back">Tagasi</a>
+            <input type="submit" class="btn btn-primary" name="Submit" value="Saada andmed" />
+          </div>
+        </form>
+        </div>
+      </div>
+
+
+      <div id="thankswrapper" class="hide">
+        <h2 class="text-center" style="margin: 120px auto;">Aitäh, võtame sinuga ühendust <br> hiljemalt kahe tööpäeva jooksul. <br>
+          <span class="small">Saatsime soovi koopia meeldetuletuseks ka sinu meili peale. </span>
+        </h2>
+      </div>
+    </section>
+
+
+      <!-- All other scripts -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script>!window.jQuery && document.write(unescape('%3Cscript src="assets/scripts/jquery-1.8.2.min.js"%3E%3C/script%3E'))</script>
+      <script src="assets/scripts/bootstrap-slider.js"></script>
+      <script src="assets/scripts/main.js"></script>
+      <!-- All other scripts -->
+    </body>
+    </html>
