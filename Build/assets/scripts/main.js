@@ -266,7 +266,7 @@ var calculatePrice = function () {
     function addOnePhone() {
         if ($("#js-slider-phone").val() > 0) {
             $("#js-counted-phone").val(1);
-            window.addOneMobile = function (){};
+            window.addOnePhone = function (){};
         }
     }
 
