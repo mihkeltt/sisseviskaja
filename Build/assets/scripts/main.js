@@ -197,69 +197,95 @@ console.log(donglecount);
 
     $("#js-volume-desktopStripped").val($("#js-volume-desktop").text());
 
+    $("#js-phoneamount").html($("#js-counted-phone").val());
     $("#js-volume-phoneStripped").val($("#js-volume-phone").text());
     $("#js-counted-phonePrice").val((phonecountsum).toFixed(2));
     $("#js-counted-phoneSum").val((phonesum).toFixed(2));
 
+    $("#js-mobileamount").html($("#js-counted-mobile").val());
     $('#js-mobilesum').val((mobilesum).toFixed(2));
 
+    $("#js-dongleamount").html($("#js-counted-dongle").val());
     $("#js-volume-dongleStripped").val($("#js-volume-dongle").text());
     $('#js-donglesum').val((donglesum).toFixed(2));
 
 };
 
-
-
-var countD = 0;
-
     var addDongle = function () {
+        var countD = $("#js-counted-dongle").val();
             countD++;
-        $("#js-dongleamount").html(countD);
+        
         $("#js-counted-dongle").val(countD);
         calculatePrice();
     };
 
     var removeDongle = function () {
+        var countD = $("#js-counted-dongle").val();
         if (countD > 0)
             countD--;
-        $("#js-dongleamount").html(countD);
+
         $("#js-counted-dongle").val(countD);
         calculatePrice();
     };
 
-var countM = 0;
-
     var addMobile = function () {
+        var countM = $("#js-counted-mobile").val();
             countM++;
-        $("#js-mobileamount").html(countM);
         $("#js-counted-mobile").val(countM);
+
         calculatePrice();
     };
 
     var removeMobile = function () {
+        var countM = $("#js-counted-mobile").val();
         if (countM > 0)
             countM--;
-        $("#js-mobileamount").html(countM);
         $("#js-counted-mobile").val(countM);
         calculatePrice();
     };
 
-var countP = 0;
-
     var addPhone = function () {
+        var countP = $("#js-counted-phone").val();
             countP++;
-        $("#js-phoneamount").html(countP);
         $("#js-counted-phone").val(countP);
         calculatePrice();
     };
 
     var removePhone = function () {
+        var countP = $("#js-counted-phone").val();
         if (countP > 0)
             countP--;
-        $("#js-phoneamount").html(countP);
         $("#js-counted-phone").val(countP);
         calculatePrice();
     };
+
+    function addOnePhone() {
+        if ($("#js-slider-phone").val() > 0) {
+            $("#js-counted-phone").val(1);
+            window.addOneMobile = function (){};
+        }
+    }
+
+    function addOneMobile() {
+        if ($("#js-slider-mobile").val() > 0) {
+            $("#js-counted-mobile").val(1);
+            window.addOneMobile = function (){};
+        }
+    }
+
+    function addOneMobileVol() {
+        if (($("#js-slider-mobile-vol").val() > 0) && ($("#js-slider-mobile").val() == 0)) {
+            $("#js-counted-mobile").val(1);
+            window.addOneMobileVol = function (){};
+        }
+    }
+
+    function addOneDongle() {
+        if ($("#js-slider-dongle").val() > 0) {
+            $("#js-counted-dongle").val(1);
+            window.addOneDongle = function (){};
+        }
+    }
 
 $(document).ready( function() {
 
@@ -270,72 +296,50 @@ $(document).ready( function() {
 
     $("#js-slider-phone").slider()
     .on('slide', function(ev){
+        addOnePhone();
         calculatePrice();
     });
 
     
     $("#js-slider-mobile").slider()
     .on('slide', function(ev){
-        // if ($("#js-slider-mobile").val() > 0) {
-
-        // }
+        addOneMobile();
         calculatePrice();
-
-         // $("#js-volume-mobile-vol").html(mobileAddedMin[$("#js-slider-mobile").val()]);
-         
     });
 
     $("#js-slider-mobile-vol").slider()
     .on('slide', function(ev){
-
+        addOneMobileVol();
         calculatePrice();
     });
 
     $("#js-slider-dongle").slider()
     .on('slide', function(ev){
-
+        addOneDongle();
         calculatePrice();
     });
 
 
+    $("#js-price-desktop").val("0");
 
-    // $(".js-onedown").click(function() {
-    //     if (count > 0)
-    //         count--;
-    //     $(this).next().val(count);
-    //     $(this).next().next().html(count);
+    $("#js-counted-phone").val("0");
+    $("#js-price-phone").val("0");
 
-    //     calculatePrice();
-    // });
+    $("#js-counted-mobile").val("0");
+    $("#js-price-mobile").val("0");
+    $("#js-price-mobile-vol").val("0");
 
-    // $(".js-oneup").click(function() {
-    //     count++;
-    //     $(this).prev().prev().val(count);
-    //     $(this).prev().html(count);
+    $("#js-volume-mobile-minutes").val("0");
+    $("#js-volume-mobile-min-val").val("0");
+    $("#js-volume-mobile-sms").val("0");
+    $("#js-volume-mobile-sms-val").val("0");
 
-    //     calculatePrice();
-    // });
+    $("#js-counted-dongle").val("0");
+    $("#js-price-dongle").val("0");
 
-        $("#js-price-desktop").val("0");
+    calculatePrice();
 
-        $("#js-counted-phone").val("0");
-        $("#js-price-phone").val("0");
-
-        $("#js-counted-mobile").val("0");
-        $("#js-price-mobile").val("0");
-        $("#js-price-mobile-vol").val("0");
-
-        $("#js-volume-mobile-minutes").val("0");
-        $("#js-volume-mobile-min-val").val("0");
-        $("#js-volume-mobile-sms").val("0");
-        $("#js-volume-mobile-sms-val").val("0");
-
-        $("#js-counted-dongle").val("0");
-        $("#js-price-dongle").val("0");
-
-        calculatePrice();
-
-    });
+});
 
         // Form validation
 $("#js-confirm-calc").click(function(){
