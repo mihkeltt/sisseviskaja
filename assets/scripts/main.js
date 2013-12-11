@@ -376,12 +376,11 @@ $("#js-sendIt").click(function(){
            // url: url,
            data: $("#theData").serialize(),
            success: function(data) {
-                console.log(data);
                 $("#js-contactwrapper").slideUp('slow');
                 $("#js-thankswrapper").show();
            }
          });
-    // console.log($("#theData").serialize());
+    console.log($("#theData").serialize());
     return false;
 });
 
