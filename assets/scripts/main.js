@@ -175,7 +175,6 @@ var calculatePrice = function () {
     
 
     var counted =  desktop + phonesum + mobilesum + donglesum;
-console.log(donglecount);
 
     var countedround = counted.toFixed(2);
     var comnum = ReplaceNumberWithCommas(countedround);
@@ -208,8 +207,11 @@ console.log(donglecount);
     $("#js-dongleamount").html($("#js-counted-dongle").val());
     $("#js-volume-dongleStripped").val($("#js-volume-dongle").text());
     $('#js-donglesum').val((donglesum).toFixed(2));
+    $("#js-yourmail").html($("#js-email").val());
 
 };
+
+// count on -+
 
     var addDongle = function () {
         var countD = $("#js-counted-dongle").val();
@@ -259,6 +261,8 @@ console.log(donglecount);
         calculatePrice();
     };
 
+// add one to count when slided
+
     function addOnePhone() {
         if ($("#js-slider-phone").val() > 0) {
             $("#js-counted-phone").val(1);
@@ -274,7 +278,7 @@ console.log(donglecount);
     }
 
     function addOneMobileVol() {
-        if (($("#js-slider-mobile-vol").val() > 0) && ($("#js-slider-mobile").val() == 0)) {
+        if (($("#js-slider-mobile-vol").val() > 0) && ($("#js-slider-mobile").val() === 0)) {
             $("#js-counted-mobile").val(1);
             window.addOneMobileVol = function (){};
         }
@@ -338,21 +342,22 @@ $(document).ready( function() {
     $("#js-price-dongle").val("0");
 
     calculatePrice();
-
 });
 
-        // Form validation
+
 $("#js-confirm-calc").click(function(){
-    $("#calcwrapper").slideUp('slow');
-    $("#contactwrapper").show();
+    $("#js-calcwrapper").slideUp('slow');
+    $("#js-contactwrapper").show();
 });
 
 $("#js-back").click(function(){
-    $("#contactwrapper").hide();
-    $("#calcwrapper").show();
+    $("#js-contactwrapper").hide();
+    $("#js-calcwrapper").show();
 });
 
-function required() {
+
+$("#js-sendIt").click(function(){
+    // Check for required 
     var empt = $(".form-group :input").val();
     if (empt ==="") {
         $(".form-group").addClass("has-error");
@@ -362,11 +367,26 @@ function required() {
     else {
         $(".alert-danger").slideUp("fast");
         $(".form-group").removeClass("has-error");
-        $("#contactwrapper").slideUp('slow');
-        $("#calcwrapper").hide();
-        $("#thankswrapper").show();
-        return true;
     }
-}
+
+    // var url = "path/to/script";
+
+    $.ajax({
+           type: "POST",
+           // url: url,
+           data: $("#theData").serialize(),
+           success: function(data) {
+                console.log(data);
+                $("#js-contactwrapper").slideUp('slow');
+                $("#js-thankswrapper").show();
+           }
+         });
+    // console.log($("#theData").serialize());
+    return false;
+});
+
+
+
+
 
 

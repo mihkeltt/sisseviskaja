@@ -325,10 +325,10 @@ span.amount {
 	}
 }
 
-// Forms 
+// Forms from BS
 
 
-#contactform {
+#theform {
 	width: 400px;
 	margin: 0 auto;
 	h2 span.small {
@@ -409,15 +409,15 @@ border-radius: 4px;
 	vertical-align: middle;
 }
 
-input[type="submit"] {
-	width: auto;
-	float: right;
-}
+
 
 .buttongroup {
 	margin-top: 20px;
 	& a {
 		line-height: 2;
+	}
+	& button {
+		float: right;
 	}
 }
 /* END : Global styles */

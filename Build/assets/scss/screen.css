@@ -470,10 +470,10 @@ span.amount {
   #js-confirm-calc.btn {
     padding: 6px 20px; }
 
-#contactform {
+#theform {
   width: 400px;
   margin: 0 auto; }
-  #contactform h2 span.small {
+  #theform h2 span.small {
     display: inline-block;
     margin-top: 30px; }
 
@@ -539,14 +539,12 @@ input:focus {
   font-size: 22px;
   vertical-align: middle; }
 
-input[type="submit"] {
-  width: auto;
-  float: right; }
-
 .buttongroup {
   margin-top: 20px; }
   .buttongroup a {
     line-height: 2; }
+  .buttongroup button {
+    float: right; }
 
 /* END : Global styles */
 /* START : MEDIA QUERIES */
