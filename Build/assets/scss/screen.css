@@ -385,9 +385,6 @@ p, strong {
 .section-horizontal {
   padding: 10px 0; }
 
-.bottomborder {
-  border-bottom: 1px solid #cccccc; }
-
 .col-quarter {
   width: 25%;
   float: left;

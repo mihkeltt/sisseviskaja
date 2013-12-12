@@ -122,6 +122,7 @@ function ReplaceNumberWithCommas(yourNumber) {
 
 
 var calculatePrice = function () {
+    console.debug($("#js-slider-desktop").val());
     $("#js-price-desktop").val(desktopPrice[$("#js-slider-desktop").val()]);
     $("#js-volume-desktop").html(desktopVolume[$("#js-slider-desktop").val()]);
 
@@ -159,12 +160,14 @@ var calculatePrice = function () {
     var donglecount = parseFloat($("#js-counted-dongle").val());
     var dongle = parseFloat($("#js-price-dongle").val());
 
+    var phonecountsum;
+
     if (desktop > 0 && phonecount > 0) {
-        var phonecountsum = (phonecount * 4.15) - 4.15;
+        phonecountsum = (phonecount * 4.15) - 4.15;
     }
 
     else {
-        var phonecountsum = phonecount * 4.15;
+        phonecountsum = phonecount * 4.15;
     }
 
     var phonesum = ( phonecount * phone ) + phonecountsum;
@@ -262,26 +265,26 @@ var calculatePrice = function () {
 // add one to count when slided
 
     function addOnePhone() {
-        if (($("#js-slider-phone").val() !== 0) && ($("#js-counted-phone").val() == 0)) {
+        if (($("#js-slider-phone").val() != 0) && ($("#js-counted-phone").val() == 0)) {
             $("#js-counted-phone").val(1);
             // window.addOnePhone = function (){};
         }
     }
 
     function addOneMobile() {
-        if (($("#js-slider-mobile").val() !== 0) && ($("#js-counted-mobile").val() == 0)) {
+        if (($("#js-slider-mobile").val() > 0) && ($("#js-counted-mobile").val() == 0)) {
             $("#js-counted-mobile").val(1);
         }
     }
 
     function addOneMobileVol() {
-        if (($("#js-slider-mobile-vol").val() !== 0) && ($("#js-slider-mobile").val() == 0)  && ($("#js-counted-mobile").val() == 0)) {
+        if (($("#js-slider-mobile-vol").val() != 0) && ($("#js-slider-mobile").val() == 0)  && ($("#js-counted-mobile").val() == 0)) {
             $("#js-counted-mobile").val(1);
         }
     }
 
     function addOneDongle() {
-        if (($("#js-slider-dongle").val() !== 0) && ($("#js-counted-dongle").val() == 0) ) {
+        if (($("#js-slider-dongle").val() != 0) && ($("#js-counted-dongle").val() == 0) ) {
             $("#js-counted-dongle").val(1);
         }
     }
@@ -354,7 +357,7 @@ $("#js-back").click(function(){
 $("#js-sendIt").click(function(){
     // Check for required 
     var empt = $(".form-group :input").val();
-    if (empt ==="") {
+    if ( !empt ) {
         $(".form-group").addClass("has-error");
         $(".alert-danger").slideDown("fast");
         return false;
