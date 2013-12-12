@@ -42,7 +42,7 @@
           </div>
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <p id="js-volume-desktop"><span class="violet-text">Ei soovi</span></p> 
+              <p id="js-volume-desktop"></p> 
             </div>
             <div class="col-threequarter">
               <input class="slider" id="js-slider-desktop" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
@@ -74,10 +74,10 @@
                 <p id="js-volume-phone"></p> 
               </div>
               <div class="col-threequarter">
-                <input class="slider" id="js-slider-phone" type="text" value="1" data-slider-min="0" data-slider-max="3" data-slider-step="1" data-slider-value="1" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+                <input class="slider" id="js-slider-phone" type="text" value="0" data-slider-min="0" data-slider-max="2" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
               </div>
             </div>
-            <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, dolorem nesciunt iste mollitia ad sint cupiditate sit blanditiis rem non nisi neque dolorum quo molestias voluptates quas expedita nam. Illum?</p>
+            <p class="small">Lauatelefoni minutimaht sisaldab kõnesid Eestist Rootsi, Soome, Norra, Taani, Läti, Leedu ja Venemaa fiks- ja mobiilinumbritele. Lauatelefoni minutimahu täitumisel kehtib Eestist välismaale helistamise tavahind.</p>
           </div>
 
         <!-- Mobile phone -->
@@ -98,7 +98,7 @@
             </div>
             <div class="col-threequarter">
               <hr>
-              <p>Kõne-internetimaht ühe <br>mobiili kohta kuus</p>
+              <p>Interneti-kõnemaht ühe <br>mobiili kohta kuus</p>
             </div>
           </div>
           <div class="section-horizontal clearfix">
@@ -118,7 +118,7 @@
             </div>
           </div>
           <p class="small">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, dolorem nesciunt iste mollitia ad sint cupiditate sit blanditiis rem non nisi neque dolorum quo molestias voluptates quas expedita nam. Illum?
+            Mobiiltelefoni minutimaht sisaldab kõnesid Eestist Rootsi, Soome, Norra, Taani, Läti ja Leedu numbritele (v.a. helistamine personaalnumbritele ja mittegeograafilistele numbritele). Mobiiltelefoni minutimahu täitumisel kehtib Eestist välismaale helistamise tavahind.
           </p>
           <hr>
 
@@ -190,16 +190,16 @@
           <div id="chosenServices" class="hide">
             <strong>Internet</strong>
             <br>
-            Kiirus: <input type="text" id="js-volume-desktopStripped" value="" name="kontoriInternetiKiirus" >
-            Kuutasu: <input type="text" id="js-price-desktop" name="kontoriInternetiKuutasu">
+            Kiirus: <input type="text" id="js-volume-desktopStripped" value="0" name="kontoriInternetiKiirus" >
+            Kuutasu: <input type="text" id="js-price-desktop" value="0" name="kontoriInternetiKuutasu">
             <br><br>
             <strong>Lauatelefoni liitumisi</strong>
             <br>
-            Maht: <input type="text" id="js-volume-phoneStripped" value="60" name="lauatelefoniMaht">
+            Maht: <input type="text" id="js-volume-phoneStripped" value="0" name="lauatelefoniMaht">
             Kogus: <input type="text" id="js-counted-phone" value="0" name="lauatelefoniKogus">
-            Liitumiste hind: <input type="text" id="js-counted-phonePrice" value="" name="lauatelefoniLiitumiseHind">
-            Hind: <input type="text" id="js-price-phone" name="lauatelefoniHind">
-            Kuutasu: <input type="text" id="js-counted-phoneSum" value="" name="lauatelefoniKuutasu">
+            Liitumiste hind: <input type="text" id="js-counted-phonePrice" value="0" name="lauatelefoniLiitumiseHind">
+            Hind: <input type="text" id="js-price-phone" value="0" name="lauatelefoniHind">
+            Kuutasu: <input type="text" id="js-counted-phoneSum" value="0" name="lauatelefoniKuutasu">
             <br><br>
             <strong>Mobiil ja mobiilinternet</strong>
             <br>

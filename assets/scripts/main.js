@@ -19,17 +19,15 @@ var desktopPrice = {
 };
 
 var phoneVolume = {
-    0: '<span class="violet-text">Ei soovi</span>',
-    1: '<span class="violet-text">60</span> minutit',
-    2: '<span class="violet-text">120</span> minutit',
-    3: '<span class="violet-text">240</span> minutit',
+    0: '<span class="violet-text">60</span> minutit',
+    1: '<span class="violet-text">120</span> minutit',
+    2: '<span class="violet-text">240</span> minutit',
 };
 
 var phonePrice = {
-    0: "0",
-    1: "1.66",
-    2: "2.99",
-    3: "5.66",
+    0: "1.66",
+    1: "2.99",
+    2: "5.66",
 };
 
 var mobileVolume = {
@@ -264,30 +262,27 @@ var calculatePrice = function () {
 // add one to count when slided
 
     function addOnePhone() {
-        if ($("#js-slider-phone").val() > 0) {
+        if (($("#js-slider-phone").val() !== 0) && ($("#js-counted-phone").val() == 0)) {
             $("#js-counted-phone").val(1);
-            window.addOnePhone = function (){};
+            // window.addOnePhone = function (){};
         }
     }
 
     function addOneMobile() {
-        if ($("#js-slider-mobile").val() > 0) {
+        if (($("#js-slider-mobile").val() !== 0) && ($("#js-counted-mobile").val() == 0)) {
             $("#js-counted-mobile").val(1);
-            window.addOneMobile = function (){};
         }
     }
 
     function addOneMobileVol() {
-        if (($("#js-slider-mobile-vol").val() > 0) && ($("#js-slider-mobile").val() === 0)) {
+        if (($("#js-slider-mobile-vol").val() !== 0) && ($("#js-slider-mobile").val() == 0)  && ($("#js-counted-mobile").val() == 0)) {
             $("#js-counted-mobile").val(1);
-            window.addOneMobileVol = function (){};
         }
     }
 
     function addOneDongle() {
-        if ($("#js-slider-dongle").val() > 0) {
+        if (($("#js-slider-dongle").val() !== 0) && ($("#js-counted-dongle").val() == 0) ) {
             $("#js-counted-dongle").val(1);
-            window.addOneDongle = function (){};
         }
     }
 
