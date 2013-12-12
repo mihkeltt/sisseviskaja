@@ -31,7 +31,7 @@ var phonePrice = {
 };
 
 var mobileVolume = {
-    0: '<br /><span class="violet-text">Ei soovi</span>',
+    0: '<br /><span class="violet-text">0GB</span>',
     1: '<span class="violet-text">1,5GB</span><br>3M alla /<br>1M üles',
     2: '<span class="violet-text">5GB</span><br>21,6M alla /<br>5,7M üles',
     3: '<span class="violet-text">10GB</span><br>50M alla /<br>5M üles',
