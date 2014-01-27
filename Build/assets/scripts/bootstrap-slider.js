@@ -260,12 +260,12 @@
 			this.layout();
 			var val = this.calculateValue();
 			this.element
+				.data('value', val)
+				.prop('value', val)
 				.trigger({
 					type: 'slide',
 					value: val
-				})
-				.data('value', val)
-				.prop('value', val);
+				});
 			return false;
 		},
 
@@ -291,12 +291,12 @@
 			var val = this.calculateValue();
 			
 			this.element
+				.data('value', val)
+				.prop('value', val)
 				.trigger({
 					type: 'slideStop',
 					value: val
-				})
-				.data('value', val)
-				.prop('value', val);
+				});
 			return false;
 		},
 
