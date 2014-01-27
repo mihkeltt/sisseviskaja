@@ -292,31 +292,31 @@ var calculatePrice = function () {
 $(document).ready( function() {
 
     $("#js-slider-desktop").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function(ev){
         calculatePrice();
     });
 
     $("#js-slider-phone").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function(ev){
         addOnePhone();
         calculatePrice();
     });
 
     
     $("#js-slider-mobile").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function(ev){
         addOneMobile();
         calculatePrice();
     });
 
     $("#js-slider-mobile-vol").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function(ev){
         addOneMobileVol();
         calculatePrice();
     });
 
     $("#js-slider-dongle").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function(ev){
         addOneDongle();
         calculatePrice();
     });
